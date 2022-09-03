@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>E-commerce page project</title>
+</head>
+<body>
+    <header class="header">
+            <div class="header__profile">
+                <div class="header__profle_cart">
+                    <img src="images/icon-cart.svg" alt="shopping cart icon">
+                </div>
+                <div class="header__profile_avatar">
+                    <img src="images/image-avatar.png" alt="avatar image">
+                </div>
+            </div>
+            <nav class="header__nav">
+                <div class="header__nav_menu hamburger">
+                    <span id="bar"></span>
+                    <span id="bar"></span>
+                    <span id="bar"></span>
+                </div>
+                <div class="header__nav_menu list">
+                    <ul>
+                        <li><a href="#collections">Collections</a></li>
+                        <li><a href="#Men">Men</a></li>
+                        <li><a href="#Women">Women</a></li>
+                        <li><a href="#About">About</a></li>
+                        <li><a href="#Contact">Contact</a></li>
+                    </ul>
+                </div>
+            </nav>
+    </header>
+    <main>
+        <section class="photo">
+            <img src="images/image-product-1.jpg" alt="sneakers picuter" width="375px">
+        </section>
+        <section class="description">
+            <h2>Sneaker company</h2>
+            <h1>Fall Limited Edition Sneakers</h1>
+                <p>These low-profile sneakers are your perfect
+                casual wear companion. Featuring a durable
+                rubber outer sole, they'll withstand everything
+                the weather can offer.
+                </p>
+        </section>
+        <sectioin class="buy">
+            <div class="price">
+                <p>$125.00<span id="discount">50%</span></p>
+                <p><del>$250</del></p>
+            </div>
+            <div class="plus_minus">
+                <button id="minus">
+                    <a href="#deduct_item">-</a>
+                </button>
+                <span id="output"></span>
+                <button id="plus">
+                    <a href="#add_item">+</a>
+                </button>
+            </div>
+            <button class="button">
+                <a href="#add_to_cart">Add to cart</a>
+            </button>
+        </sectioin>
+    </main>
+    <script src="main.js"></script>
+</body>
+</html>
