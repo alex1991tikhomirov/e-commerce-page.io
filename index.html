@@ -10,38 +10,55 @@
 </head>
 
 <body>
+
     <nav class="main__nav">
         <section class="main__nav_hamburger">
-            <span class='bar' id="bar1"></span>
-            <span class='bar' id="bar2"></span>
-            <span class='bar' id="bar3"></span>
-            <div class="sneakers">
-                <span id="sneakers">sneakers</span>
-            </div>
+            <img src="images/icon-menu.svg" alt="menu icon">
         </section>
-        <section class="main__nav_list">
-            <ul>
-                <li><a href="#collections">Collections</a></li>
-                <li><a href="#Men">Men</a></li>
-                <li><a href="#Women">Women</a></li>
-                <li><a href="#About">About</a></li>
-                <li><a href="#Contact">Contact</a></li>
-            </ul>
+        <section class="main__nav_sidemenu">
+            <img src="images/icon-close.svg" alt="close icon">
+            <a href="#">Collection</a>
+            <a href="#">Men</a>
+            <a href="#">Women</a>
+            <a href="#">About</a>
+            <a href="#">Contact</a>
         </section>
+        <div class="main__nav_logo">
+            <span id="sneakers">sneakers</span>
+        </div>
         
-        <section class="main__nav_profile">
-            <div class="main__nav_profile_cart">
-                <a href="#cart"><img src="images/icon-cart.svg" alt="shopping cart icon"></a>
-                <p id="cart"></p>
+        </div>
+        <div class="main__nav_profile_cart">
+            <a href="#"><img src="images/icon-cart.svg" alt="shopping cart icon"></a>
+            <div id="cart">
+                <h3>Cart</h3>
+                <div class="cart_full_information">
+                    <a id="thumbnail" href="#thumbnail"><img src="images/image-product-1-thumbnail.jpg"
+                            alt="product image sneakers shoes"></a>
+                    <div class="cart_full_description">
+                        <p>Autumn Limited Edition</p>
+                        <p><span id="item_price">$125.00 x </span>
+                            <span id="item_number">1</span><span id="item_price_total">$125.00</span>
+                        </p>
+                    </div>
+                    <a href="#delete"><img src="images/icon-delete.svg" alt="delete icon"></a>
             </div>
-            <div class="header__profile_avatar">
-                <img src="images/image-avatar.png" alt="avatar image">
-            </div>
-        </section>
+        </div>
+        </div>
+        <div class="header__profile_avatar">
+            <a><img src="images/image-avatar.png" alt="avatar image"></a>
+        </div>
     </nav>
+
     <main>
         <section class="photo">
+            <button class="photo__viewing_previous">
+                <img src="images/icon-previous.svg" alt="previous icon">
+            </button>
             <img src="images/image-product-1.jpg" alt="sneakers picuter">
+            <button class="photo__viewing_next">
+                <img src="images/icon-next.svg" alt="next icon">
+            </button>
         </section>
         <section class="description">
             <h2>Sneaker company</h2>
@@ -65,7 +82,8 @@
                 </button>
                 <span id="output">0</span>
                 <button id="plus">
-                    <a href="#add_item"><img src="images/icon-plus.svg" alt="plus sign icon" width="13px" height="13px"></a>
+                    <a href="#add_item"><img src="images/icon-plus.svg" alt="plus sign icon" width="13px"
+                            height="13px"></a>
                 </button>
             </div>
             <button class="button">
