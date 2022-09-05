@@ -4,7 +4,7 @@ body {
   margin: 0;
   padding: 0;
   width: 100%;
-  height: 100%;
+  height: 100vh;
   box-sizing: border-box;
 }
 
@@ -30,6 +30,28 @@ ul, ol, li {
 
 body {
   font-family: "Kumbh Sans", Arial;
+  position: relative;
+}
+
+.side_menu {
+  padding: 25px;
+  width: 60%;
+  background-color: #fff;
+  height: 100vh;
+  position: fixed;
+  display: none;
+}
+.side_menu img {
+  margin-bottom: 50px;
+  cursor: pointer;
+}
+.side_menu a {
+  margin-bottom: 25px;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 18px;
+  color: hsl(220deg, 13%, 13%);
+  margin-right: 30px;
 }
 
 header {
@@ -42,6 +64,23 @@ header {
   justify-content: space-between;
   border-bottom: 1px solid rgb(199, 199, 199);
 }
+@media (max-width: 900px) {
+  header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: #fff;
+    z-index: 100;
+    width: 100%;
+  }
+}
+@media (max-width: 900px) {
+  header .logo::before {
+    content: url(images/icon-menu.svg);
+    margin-right: 20px;
+    margin-left: 5px;
+  }
+}
 header .logo {
   margin-bottom: 6px;
   margin-right: 57px;
@@ -51,6 +90,11 @@ header .logo {
   letter-spacing: 0.025em;
   color: #1E1E1E;
   cursor: pointer;
+}
+@media (max-width: 900px) {
+  header nav {
+    display: none;
+  }
 }
 header nav a {
   font-weight: 400;
@@ -69,15 +113,23 @@ header #avatar {
 
 main {
   max-width: 1114px;
-  padding-top: 5vw;
+  max-height: 900px;
+  padding-top: clamp(0px, 90px, 5vw);
   margin: 0 auto;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  align-items: center;
+  align-items: flex-start;
   justify-content: space-around;
 }
+@media (max-width: 900px) {
+  main {
+    height: 100vh;
+    overflow: scroll;
+  }
+}
 main .photo {
+  position: relative;
   max-width: 450px;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -86,39 +138,103 @@ main .photo {
   -moz-column-gap: 30px;
        column-gap: 30px;
 }
+@media (max-width: 900px) {
+  main .photo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+main .photo .photo_view {
+  cursor: pointer;
+  width: 40px;
+  height: 40px;
+  position: absolute;
+  top: calc(50% - 20px);
+  background-color: #fff;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+@media (min-width: 900px) {
+  main .photo .photo_view {
+    display: none;
+  }
+}
+main .photo #photo_next {
+  right: 15px;
+}
+main .photo #photo_previous {
+  left: 15px;
+}
+main .photo .photo_preview {
+  width: 40px;
+  height: 40px;
+  background-color: #fff;
+  position: absolute;
+  top: 50%;
+  border-radius: 20px;
+}
 main .photo #main_photo {
   width: 100%;
   border-radius: 18px;
   grid-column: 1/-1;
   cursor: pointer;
 }
+@media (max-width: 900px) {
+  main .photo #main_photo {
+    border-radius: 0;
+  }
+}
 main .photo .photo_small {
   max-width: 89px;
   border-radius: 9px;
   cursor: pointer;
 }
+@media (max-width: 900px) {
+  main .photo .photo_small {
+    display: none;
+  }
+}
 main .buy {
-  margin: 10px;
+  padding-top: 4.5vw;
+  min-height: 450px;
   max-width: 450px;
-  height: 50vh;
   display: flex;
   align-items: flex-start;
   flex-direction: column;
-  justify-content: space-evenly;
+  justify-content: space-around;
   flex-wrap: wrap;
+}
+@media (max-width: 400px) {
+  main .buy {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 93vw;
+    background-color: #fff;
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+  }
 }
 main .buy #sneaker {
   font-weight: 700;
-  font-size: 14px;
+  font-size: clamp(12px, 14px, 2.5vw);
   line-height: 123.02%;
   letter-spacing: 0.1em;
   color: #F18533;
   text-transform: uppercase;
+  margin-bottom: 0.75vw;
+  margin-top: 0.05vw;
 }
 main .buy #edition {
   font-weight: 700;
-  font-size: 40px;
-  line-height: 49px;
+  font-size: clamp(28px, 40px, 3.5vw);
+  line-height: max(40px, 1vw);
   letter-spacing: 0.03em;
   color: hsl(220deg, 13%, 13%);
 }
@@ -128,6 +244,11 @@ main .buy #description {
   line-height: 171.5%;
   letter-spacing: 0.025em;
   color: hsl(219deg, 9%, 45%);
+}
+@media (max-width: 400px) {
+  main .buy #description {
+    margin-bottom: 20px;
+  }
 }
 main .buy #price {
   position: relative;
@@ -160,12 +281,40 @@ main .buy .items_number {
   justify-content: space-between;
   flex-direction: row;
 }
+@media (max-width: 900px) {
+  main .buy .items_number {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+}
+main .buy .items_number .items_number_pl-mn {
+  width: 38%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+}
+@media (max-width: 900px) {
+  main .buy .items_number .items_number_pl-mn {
+    width: 90%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: row;
+    margin: 30px 0;
+  }
+}
+main .buy .items_number .items_number_pl-mn #total_items {
+  font-weight: bold;
+}
 main .buy .items_number #cart_icon {
   margin-right: 15px;
 }
-main .buy .items_number #button {
+main .buy #button {
   text-align: center;
-  position: relative;
   width: 60%;
   height: 56px;
   background: #F18533;
@@ -177,4 +326,9 @@ main .buy .items_number #button {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+@media (max-width: 900px) {
+  main .buy #button {
+    width: 100%;
+  }
 }/*# sourceMappingURL=style.css.map */

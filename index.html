@@ -10,7 +10,14 @@
 </head>
 
 <body>
-
+    <div class="side_menu">
+        <img src="images/icon-close.svg" alt="close icon">
+            <a href="#Collections">Collections</a>
+            <a href="#Men">Men</a>
+            <a href="#Women">Women</a>
+            <a href="#About">About</a>
+            <a href="#Contact">Contact</a>
+    </div>
     <header>
         <span class="logo">sneakers</span>
         <nav class="nav">
@@ -25,6 +32,8 @@
     </header>
     <main>
         <section class="photo">
+            <a class="photo_view" id="photo_previous" href="#"><img src="images/icon-previous.svg" alt="icon-previous"></a>
+            <a class="photo_view" id="photo_next" href="#"><img src="images/icon-next.svg" alt="icon-previous"></a>
             <img id="main_photo" src="images/image-product-1.jpg" alt="main sneaker image">
             <img class="photo_small" id="photo-1" src="images/image-product-1-thumbnail.jpg" alt="small sneakers">
             <img class="photo_small" id="photo-2" src="images/image-product-2-thumbnail.jpg" alt="image small sneakers">
@@ -34,20 +43,21 @@
         </section>
         <section class="buy">
             <h3 id="sneaker">sneaker company</h3>
-            <h1 id="edition">Fall Limited edition</h1>
+            <h1 id="edition">Fall Limited edition Sneakers</h1>
             <p id="description">These low-profile sneakers are your perfect casual wear companion. Featuring a durable
                 rubberr outer sole, they'll withstand everything the weather can offer.</p>
             <p id="price">$125.00<br><del id="price_deleted">$250.00</del></p>
 
             <div class="items_number">
-                <img src="images/icon-minus.svg" alt="icon-minus">
-                <span id="total_items">0</span>
-                <img src="images/icon-plus.svg" alt="icon-plus">
-                <button id="button">
-                    <img id="cart_icon" src="images/white_cart.svg" alt="white shopping cart icon"><span id="btn-cart">Add to cart</span>
-                </button>
+                <div class="items_number_pl-mn">
+                    <img src="images/icon-minus.svg" alt="icon-minus">
+                    <span id="total_items">0</span>
+                    <img src="images/icon-plus.svg" alt="icon-plus">
+                </div>
+            <button id="button">
+                <img id="cart_icon" src="images/white_cart.svg" alt="white shopping cart icon"><span id="btn-cart">Add to cart</span>
+            </button>
             </div>
-
         </section>
     </main>
 </body>
