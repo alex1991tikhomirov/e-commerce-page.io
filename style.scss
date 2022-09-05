@@ -1,141 +1,173 @@
-@import 'variables', 'reset', 'mixins';
+@import 'variables', 'mixins', 'reset';
 @import url(https://fonts.googleapis.com/css?family=Kumbh+Sans:100,200,300,regular,500,600,700,800,900);
 
 body {
     font-family: $ff;
-    position: relative;
 }
-////////////////////////navigation/////////////////////
-.main__nav {
-    width: 100%;
-    height: 68px;
-    background-color: #fff;
+
+header {
+    max-width: 1114px;
+    margin: 0 auto;
+    padding: calc(0.02 * 100vw);
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: space-between;
+    border-bottom: 1px solid rgb(199, 199, 199);
+
+    .logo {
+        margin-bottom: 6px;
+        margin-right: 57px;
+        font-weight: 700;
+        font-size: 30px;
+        line-height: 36px;
+        letter-spacing: 0.025em;
+        color: #1E1E1E;
+        cursor: pointer;
+
+    }
+
+    nav {
+        a {
+            font-weight: 400;
+            font-size: 15px;
+            line-height: 18px;
+            color: $p-cl;
+            margin-right: 30px;
+        }
+    }
+
+    #cart {
+        margin-left: auto;
+    }
+
+    #avatar {
+        width: clamp(25px, 50px, calc(0.048 * 100vw));
+        margin-left: clamp(23px, calc(0.02 * 100vw), 50px);
+    }
+}
+
+main {
+    max-width: 1114px;
+    padding-top: calc(0.05 * 100vw);
+    margin: 0 auto;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     align-items: center;
-    justify-content: space-between;
-    padding: 22px;
-    border: 1px solid red;
-    z-index: 2;
-    .main__nav_hamburger {
-        cursor: pointer;
-        width: 16px;
-        height: 15px;
-    }
-    .main__nav_profile_cart:active{
-        #cart{
-            transform: translateY(0px);
-        }
-    }
-    #cart{
-        transform: translateY(-300px);
-        transition: ease-in-out 0.5s;
-        position: absolute;
-        top: 76px;
-        left: 5px;
-        right: 5px;
-        background-color: #fff;
-        width: 100%;
-        border-radius: 10px;
-        box-shadow: 0 10px 10px rgba(87, 52, 0, 0.5);
-        
-        h3 {
-            padding: 20px 20px 50px 25px;
-            padding-bottom: 50px;
-            height: 65px;
-            border-bottom: 1px solid rgb(226, 226, 226);
-            font-size: 16px;
-        }
-        
-        .cart_full_information {
-            padding: 25px;
-            display: flex;
-            align-items: center;
-            flex-direction: row;
-            justify-content: space-between;
-            
-            .cart_full_description {
-                display: grid;
-                grid-template-rows: 1fr 1fr;
-                #item_price, #item_total{
-                    font-weight: normal;
-                }
-                p {
-                    font-weight: 600;
-                    font-size: 16px;
-                    line-height: 168.02%;
-                    color: #6A6E77;
-                    #item_price_total{
-                        font-weight: bold;
-                        color:#1E1E1E;
-                        margin-left: 5px;
-                    }
-                }
-            }
-            
-            #thumbnail>img {
-                width: 50px;
-                height: 50px;
-                border-radius: 5px;
-            }
-        }
-    }
+    justify-content: space-around;
 
-    .main__nav_hamburger:active + .main__nav_sidemenu{   ///transition side menu
-        visibility: visible;
-    }
+    .photo {
+        max-width: 450px;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: 1fr auto;
+        row-gap: 30px;
+        column-gap: 30px;
 
-    .main__nav_sidemenu {
-        visibility: hidden;
-        width: 65%;
-        height: 100%;
-        padding: 25px;
-        position: absolute;
-        top: 0px;
-        left: 0;
-        z-index: 10;
-        background-color: #fff;
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-        a {
-            margin-bottom: 16px;
-            font-weight: 600;
-            font-size: 18px;
-            line-height: 168.02%;
-            color: #1E1E1E;
-
+        #main_photo {
+            width: 100%;
+            border-radius: 18px;
+            grid-column: 1 / -1;
+            cursor: pointer;
         }
 
-        img {
-            margin-bottom: 50px;
+        .photo_small {
+            max-width: 89px;
+            border-radius: 9px;
             cursor: pointer;
         }
     }
 
-    .main__nav_logo {
-        margin-left: 17px;
+    .buy {
+        margin: 10px;
+        max-width: 450px;
+        height: calc(0.5 * 100vh);
+        display: flex;
+        align-items: flex-start;
+        flex-direction: column;
+        justify-content: space-evenly;
+        flex-wrap: wrap;
 
-        #sneakers {
+        #sneaker {
             font-weight: 700;
-            font-size: 32px;
-            line-height: 20px;
+            font-size: 14px;
+            line-height: 123.02%;
+            letter-spacing: 0.1em;
+            color: #F18533;
+            text-transform: uppercase;
+        }
+
+        #edition {
+            font-weight: 700;
+            font-size: 40px;
+            line-height: 49px;
+            letter-spacing: 0.03em;
+            color: $h1-cl;
+        }
+
+        #description {
+            font-weight: 400;
+            font-size: 15px;
+            line-height: 171.5%;
+            letter-spacing: 0.025em;
+            color: $p-cl;
+        }
+
+        #price {
+            position: relative;
+            font-weight: 700;
+            font-size: 28px;
+            line-height: 100%;
             color: #1E1E1E;
 
         }
-    }
 
-    .main__nav_profile_cart {
-        margin-left: auto;
-    }
+        #price::after {
+            content: '50%';
+            font-weight: 700;
+            font-size: 16px;
+            line-height: 171.5%;
+            color: #F18533;
+            position: absolute;
+            top: 0px;
+            right: -50px;
 
-    .header__profile_avatar {
-        img {
-            width: 24px;
-            height: 24px;
-            margin-left: 27px;
         }
+
+        #price_deleted {
+            font-weight: 700;
+            font-size: 15px;
+            line-height: 18px;
+            letter-spacing: 0.01em;
+            color: $l-grey;
+        }
+
+        .items_number {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-direction: row;
+            #cart_icon{
+                margin-right: 15px;
+            }
+            #button {
+                text-align: center;
+                position: relative;
+                width: 60%;
+                height: 56px;
+                background: #F18533;
+                border-radius: 9px;
+                font-weight: 400;
+                font-size: 16px;
+                line-height: 171.5%;
+                color: #FFFFFF;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+        }
+
     }
 }
-////////////////main/////////////////
