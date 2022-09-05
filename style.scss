@@ -6,6 +6,147 @@ body {
     position: relative;
 }
 
+/* shopping cart invisible starts*/
+.shopping_cart {
+    visibility: hidden;
+    height: 250px;
+    position: absolute;
+    z-index: 300;
+    top: 75px;
+    right: 10%;
+    max-width: 370px;
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    justify-content: space-between;
+    background-color: #fff;
+    border-radius: 15px;
+    box-shadow: 1px 42px 75px -23px rgba(79, 78, 78, 0.54);
+    -webkit-box-shadow: 1px 42px 75px -23px rgba(79, 78, 78, 0.54);
+    -moz-box-shadow: 1px 42px 75px -23px rgba(79, 78, 78, 0.54);
+
+    .shopping_cart_head {
+        border-bottom: 1px solid $l-grey;
+        padding: 20px;
+        width: 100%;
+        font-weight: 700;
+        font-size: 16px;
+        line-height: 123.02%;
+        letter-spacing: 0.03em;
+        color: #1E1E1E;
+
+    }
+
+    .shopping_cart_items {
+        padding: 20px;
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+
+        .shopping_cart_description {
+            margin: 0 15px;
+            font-weight: 400;
+            font-size: 15px;
+            line-height: 159.02%;
+            letter-spacing: 0.02em;
+            color: #707070;
+            #total_price{
+                font-weight: bold;
+                color: black;
+            }
+        }
+
+        #item_image {
+            width: 50px;
+            height: 50px;
+            border-radius: 5px;
+        }
+    }
+
+    .Checkout {
+        text-align: center;
+        width: 90%;
+        margin: 0 auto;
+        margin-bottom: 20px;
+        height: 56px;
+        background: #F18533;
+        border-radius: 9px;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 171.5%;
+        color: #FFFFFF;
+    }
+}
+
+/* shopping cart invisible ends*/
+///////////////////////////////// lightbox start/////////////////
+.lightbox_wrapper {
+    visibility: hidden;
+    background-color: rgba(0, 0, 0, 0.8);
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    z-index: 300;
+    top: 0;
+    left: 0;
+
+    .lightbox {
+        width: 450px;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: 1fr auto;
+        row-gap: 30px;
+        column-gap: 30px;
+        position: relative;
+
+        #main_photo {
+            width: 100%;
+            border-radius: 18px;
+            grid-column: 1 / -1;
+            cursor: pointer;
+        }
+
+        .photo_small {
+            max-width: 89px;
+            border-radius: 9px;
+            cursor: pointer;
+        }
+
+        .photo_view {
+            cursor: pointer;
+            width: 40px;
+            height: 40px;
+            position: absolute;
+            top: calc(225px - 20px);
+            background-color: #fff;
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        #photo_next {
+            right: -20px;
+        }
+
+        #photo_previous {
+            left: -20px;
+        }
+
+        #photo_close {
+            top: -20px;
+            right: -20px;
+        }
+    }
+}
+
+////////////////// lightbox end ////////////////////////////////////
+
 .side_menu {
     padding: 25px;
     width: 60%;
@@ -82,7 +223,21 @@ header {
         }
     }
 
+    #cart::after {
+        display: none;
+        content: '';
+        font-size: 8px;
+        padding: 2px 8px;
+        border-radius: 10px;
+        color: #fff;
+        background-color: $m-orange;
+        position: absolute;
+        top: -5px;
+        left: 12px;
+    }
+
     #cart {
+        position: relative;
         margin-left: auto;
     }
 
@@ -107,16 +262,19 @@ main {
     flex-wrap: wrap;
     align-items: flex-start;
     justify-content: space-around;
+
     .photo {
         @media(max-width: $scr-wd) {
             display: flex;
             align-items: center;
             justify-content: center;
         }
-        .photo_view{
-            @media(min-width: $scr-wd){
+
+        .photo_view {
+            @media(min-width: $scr-wd) {
                 display: none;
             }
+
             cursor: pointer;
             width: 40px;
             height: 40px;
@@ -128,12 +286,15 @@ main {
             align-items: center;
             justify-content: center;
         }
-        #photo_next{
+
+        #photo_next {
             right: 15px;
         }
-        #photo_previous{
+
+        #photo_previous {
             left: 15px;
         }
+
         position: relative;
         max-width: 450px;
         display: grid;
