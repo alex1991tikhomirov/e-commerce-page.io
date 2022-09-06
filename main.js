@@ -28,10 +28,10 @@ function showLightBox(){
 
 /// making lightbox to work /////
 let arr = [
-    'images/image-product-1.jpg',
-    'images/image-product-2.jpg',
-    'images/image-product-3.jpg',
-    'images/image-product-4.jpg'
+    './images/image-product-1.jpg',
+    './images/image-product-2.jpg',
+    './images/image-product-3.jpg',
+    './images/image-product-4.jpg'
 ]
 let i = 0;
 const next = document.getElementById('photo_next').addEventListener('click', chengeSlide, false);
@@ -42,7 +42,7 @@ let nextPic = document.getElementById('main_photo_lightbox');
     }else{i = i + 1}
     
     nextPic.src = arr[i];
-   console.log(i);
+   console.log(nextPic.src);
 }
 
 
