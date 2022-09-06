@@ -34,15 +34,26 @@ let arr = [
     './images/image-product-4.jpg'
 ]
 let i = 0;
-const next = document.getElementById('photo_next').addEventListener('click', chengeSlide, false);
-function chengeSlide(){
 let nextPic = document.getElementById('main_photo_lightbox');
+const next = document.getElementById('photo_next').addEventListener('click', changeSlideNext, false);
+const prev = document.getElementById('photo_previous').addEventListener('click', changeSlidePrev, false);
+
+function changeSlideNext(){
+// let nextPic = document.getElementById('main_photo_lightbox');
     if(i >= 3){
         i = 0;
     }else{i = i + 1}
     
     nextPic.src = arr[i];
    console.log(nextPic.src);
+   console.log(i);
 }
+function changeSlidePrev(){
+    if(i >= 1){
+        i = i - 1;
+    }else{i = i + 3}
+    nextPic.src = arr[i];
+}
+
 
 
