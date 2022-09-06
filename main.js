@@ -26,3 +26,23 @@ function showLightBox(){
 }
 
 
+/// making lightbox to work /////
+let arr = [
+    'http://127.0.0.1:5500/images/image-product-1.jpg',
+    'http://127.0.0.1:5500/images/image-product-2.jpg',
+    'http://127.0.0.1:5500/images/image-product-3.jpg',
+    'http://127.0.0.1:5500/images/image-product-4.jpg'
+]
+let i = 0;
+const next = document.getElementById('photo_next').addEventListener('click', chengeSlide, false);
+function chengeSlide(){
+let nextPic = document.getElementById('main_photo_lightbox');
+    if(i >= 3){
+        i = 0;
+    }else{i = i + 1}
+    
+    nextPic.src = arr[i];
+   console.log(i);
+}
+
+
