@@ -11,13 +11,14 @@
 
 <body>
     <!-- shopping cart is invisible starts here-->
+    
     <div class="shopping_cart">
         <span class="shopping_cart_head">Cart</span>
         <div class="shopping_cart_items">
             <img id="item_image" src="images/image-product-1-thumbnail.jpg" alt="thumbnail picture of sneakers">
             <div class="shopping_cart_description">
                 <p>Autumn Limited Edition</p>
-                <p><span id="item_price">$125.00 x </span><span id="total_price">$375.00</span></p>
+                <p><span id="item_price">$125.00 x </span><span></span>0<span id="total_price"></span></p>
             </div>
             <a id="delete" href="#"><img src="images/icon-delete.svg" alt="delete button"></a>
         </div>
@@ -26,24 +27,24 @@
     <!-- shopping cart is invisible ends here-->
 
     <!-- light box starts      -->
-    <div class="lightbox_wrapper">
-        <section class="lightbox">
-            <a class="photo_view"id="photo_close" href="#"><img src="images/icon-close.svg" alt="close icon"></a>
-            <a class="photo_view" id="photo_previous" href="#"><img src="images/icon-previous.svg" alt="icon-previous"></a>
-            <a class="photo_view" id="photo_next" href="#"><img src="images/icon-next.svg" alt="icon-previous"></a>
-            <img id="main_photo" src="images/image-product-1.jpg" alt="main sneaker image">
-            <img class="photo_small" id="photo-1" src="images/image-product-1-thumbnail.jpg" alt="small sneakers">
-            <img class="photo_small" id="photo-2" src="images/image-product-2-thumbnail.jpg" alt="image small sneakers">
-            <img class="photo_small" src="images/image-product-3-thumbnail.jpg" alt="images small sneakers">
-            <img class="photo_small" id="photo-4" src="images/image-product-4-thumbnail.jpg"
-                alt="images small sneakers">
-        </section>
-    </div>
+        <div class="lightbox_wrapper">
+            <section class="lightbox">
+                <a class="photo_view"id="photo_close" href="#"><img src="images/icon-close.svg" alt="close icon"></a>
+                <a class="photo_view" id="photo_previous" href="#"><img src="images/icon-previous.svg" alt="icon-previous"></a>
+                <a class="photo_view" id="photo_next" href="#"><img src="images/icon-next.svg" alt="icon-previous"></a>
+                <img id="main_photo_lightbox" src="images/image-product-1.jpg" alt="main sneaker image">
+                <img class="photo_small" id="photo-1" src="images/image-product-1-thumbnail.jpg" alt="small sneakers">
+                <img class="photo_small" id="photo-2" src="images/image-product-2-thumbnail.jpg" alt="image small sneakers">
+                <img class="photo_small" src="images/image-product-3-thumbnail.jpg" alt="images small sneakers">
+                <img class="photo_small" id="photo-4" src="images/image-product-4-thumbnail.jpg"
+                    alt="images small sneakers">
+            </section>
+        </div>
     <!-- light box ends    -->
 
     <!--side menu is invisibele-->
     <div class="side_menu">
-        <img src="images/icon-close.svg" alt="close icon">
+        <img id="close" src="images/icon-close.svg" alt="close icon">
             <a href="#Collections">Collections</a>
             <a href="#Men">Men</a>
             <a href="#Women">Women</a>
@@ -62,7 +63,7 @@
             <a href="#About">About</a>
             <a href="#Contact">Contact</a>
         </nav>
-        <a id="cart" href="#cart"><img src="images/icon-cart.svg" alt="shopping cart icon"></a>
+        <a id="cart" href="#"><img src="images/icon-cart.svg" alt="shopping cart icon"></a>
         <img id="avatar" src="images/image-avatar.png" alt="avatar image">
     </header>
     <main>
@@ -81,13 +82,13 @@
             <h1 id="edition">Fall Limited edition Sneakers</h1>
             <p id="description">These low-profile sneakers are your perfect casual wear companion. Featuring a durable
                 rubberr outer sole, they'll withstand everything the weather can offer.</p>
-            <p id="price">$125.00<br><del id="price_deleted">$250.00</del></p>
+            <p id="price">125.00<br></p><del id="price_deleted">250.00</del>
 
             <div class="items_number">
                 <div class="items_number_pl-mn">
-                    <img src="images/icon-minus.svg" alt="icon-minus">
+                    <img id="minus"src="images/icon-minus.svg" alt="icon-minus">
                     <span id="total_items">0</span>
-                    <img src="images/icon-plus.svg" alt="icon-plus">
+                    <img id="plus"src="images/icon-plus.svg" alt="icon-plus">
                 </div>
             <button id="button">
                 <img id="cart_icon" src="images/white_cart.svg" alt="white shopping cart icon"><span id="btn-cart">Add to cart</span>
@@ -95,6 +96,7 @@
             </div>
         </section>
     </main>
+    <script src="main.js"></script>
 </body>
 
 </html>

@@ -7,14 +7,24 @@ body {
 }
 
 /* shopping cart invisible starts*/
+
+.visible{
+    transform: translateY(5px);
+    transition: visibility 5s;
+}
 .shopping_cart {
-    visibility: hidden;
+    transform: translateY(-500px);
     height: 250px;
     position: absolute;
     z-index: 300;
-    top: 75px;
+    top: 65px;
     right: 10%;
-    max-width: 370px;
+    width: 375px;
+    @media(max-width: 400px){
+        right: 5%;
+        width: 90%;
+    }
+    
     display: flex;
     flex-direction: column;
     justify-items: center;
@@ -82,7 +92,17 @@ body {
 
 /* shopping cart invisible ends*/
 ///////////////////////////////// lightbox start/////////////////
+
+.lightbox_visible{
+    @media(max-width: 540px){
+        display: none;
+    }
+    visibility: visible !important;
+}
 .lightbox_wrapper {
+    @media(max-width: 540px){
+        display: none;
+    }
     visibility: hidden;
     background-color: rgba(0, 0, 0, 0.8);
     width: 100vw;
@@ -104,7 +124,7 @@ body {
         column-gap: 30px;
         position: relative;
 
-        #main_photo {
+        #main_photo_lightbox {
             width: 100%;
             border-radius: 18px;
             grid-column: 1 / -1;
@@ -144,17 +164,27 @@ body {
         }
     }
 }
-
 ////////////////// lightbox end ////////////////////////////////////
-
+.visible{
+    transform: translateX(0px) !important;
+}
+////   side menu invisble making translate from the left to the right
 .side_menu {
-    padding: 25px;
     width: 60%;
+    height: 100vh + 1;
+    padding: 25px;
     background-color: #fff;
     height: 100vh;
     position: fixed;
-    display: none;
-
+    top: 0;
+    z-index: 500;
+    transform: translateX(-1114px);
+    transition: ease-in 0.3s;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: baseline;
+    padding: 30px;
     img {
         margin-bottom: 50px;
         cursor: pointer;
@@ -162,7 +192,7 @@ body {
 
     a {
         margin-bottom: 25px;
-        font-weight: 400;
+        font-weight: 700;
         font-size: 15px;
         line-height: 18px;
         color: $h1-cl;
