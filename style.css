@@ -401,17 +401,15 @@ main .buy {
 }
 @media (max-width: 400px) {
   main .buy {
+    padding: 25px;
     margin: 8px;
     width: 100%;
-    height: 100%;
     position: absolute;
     top: 93vw;
     background-color: #fff;
-    display: flex;
-    align-items: flex-start;
-    flex-direction: column;
-    justify-content: flex-start;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    grid-template-rows: auto;
   }
 }
 main .buy #sneaker {
@@ -424,12 +422,23 @@ main .buy #sneaker {
   margin-bottom: 0.75vw;
   margin-top: 0.05vw;
 }
+@media (max-width: 400px) {
+  main .buy #sneaker {
+    grid-column: 1/-1;
+  }
+}
 main .buy #edition {
   font-weight: 700;
   font-size: clamp(28px, 40px, 3.5vw);
   line-height: max(40px, 1vw);
   letter-spacing: 0.03em;
   color: hsl(220deg, 13%, 13%);
+}
+@media (max-width: 400px) {
+  main .buy #edition {
+    grid-column: 1/-1;
+    line-height: 32px;
+  }
 }
 main .buy #description {
   font-weight: 400;
@@ -441,6 +450,9 @@ main .buy #description {
 @media (max-width: 400px) {
   main .buy #description {
     margin-bottom: 20px;
+    grid-column: 1/-1;
+    letter-spacing: 0.015em;
+    line-height: 24px;
   }
 }
 main .buy #price {
@@ -449,6 +461,11 @@ main .buy #price {
   font-size: 28px;
   line-height: 100%;
   color: #1E1E1E;
+}
+@media (max-width: 400px) {
+  main .buy #price {
+    width: 35%;
+  }
 }
 main .buy #price::after {
   content: "50%";
@@ -481,6 +498,7 @@ main .buy .items_number {
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    grid-column: 1/-1;
   }
 }
 main .buy .items_number .items_number_pl-mn {
@@ -498,6 +516,7 @@ main .buy .items_number .items_number_pl-mn {
     justify-content: space-between;
     flex-direction: row;
     margin: 30px 0;
+    grid-column: 1/-1;
   }
 }
 main .buy .items_number .items_number_pl-mn #total_items {

@@ -56,14 +56,10 @@ document.addEventListener('click', event=>{
             <p>${Product.title}</p>
             <p><span id="item_price">$125.00 x </span> <span id="items_number">${Product.itemsNumber}</span><span id="total_price">  $${Product.totalItems()}</span></p>
             </div>
-            <a id="delete" href="#"><img src="images/icon-delete.svg" alt="delete button"></a>
+            <a id="delete" data-action="delete" href="#"><img id="delete" data-action="delete" src="images/icon-delete.svg" alt="delete button"></a>
             <button class="Checkout">Checkout</button>`;
 
             shoppingCartItems.innerHTML = cartHTML;
         }}
-        let removeIcon = shoppingcart.querySelector('#delete');
-        removeIcon.addEventListener('click', ()=>{
-            
-        })
     }
 });
