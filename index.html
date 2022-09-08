@@ -13,16 +13,17 @@
     <!-- shopping cart is invisible starts here-->
     
     <div class="shopping_cart">
-        <span class="shopping_cart_head">Cart</span>
+        <div class="shopping_cart_head">Cart</div>
         <div class="shopping_cart_items">
-            <img id="item_image" src="images/image-product-1-thumbnail.jpg" alt="thumbnail picture of sneakers">
+            <p style="font-weight: 400; font-size: 15px; line-height: 159.02%; letter-spacing: 0.02em; color: #707070;">Your cart is empty</p>
+            <!-- <img id="item_image" src="images/image-product-1-thumbnail.jpg" alt="thumbnail picture of sneakers">
             <div class="shopping_cart_description">
                 <p>Autumn Limited Edition</p>
-                <p><span id="item_price">$125.00 x </span><span></span>0<span id="total_price"></span></p>
+                <p><span id="item_price">$125.00 x </span><span></span><span id="total_price"></span></p>
             </div>
             <a id="delete" href="#"><img src="images/icon-delete.svg" alt="delete button"></a>
+            <button class="Checkout">Checkout</button> -->
         </div>
-        <button class="Checkout">Checkout</button>
     </div>
     <!-- shopping cart is invisible ends here-->
 
@@ -30,12 +31,12 @@
         <div class="lightbox_wrapper">
             <section class="lightbox">
                 <a class="photo_view"id="photo_close" href="#"><img src="images/icon-close.svg" alt="close icon"></a>
-                <a class="photo_view" id="photo_previous" href="#"><img src="images/icon-previous.svg" alt="icon-previous"></a>
-                <a class="photo_view" id="photo_next" href="#"><img src="images/icon-next.svg" alt="icon-previous"></a>
+                <a class="photo_view" id="photo_previous_lightbox" href="#"><img src="images/icon-previous.svg" alt="icon-previous"></a>
+                <a class="photo_view" id="photo_next_lightbox" href="#"><img src="images/icon-next.svg" alt="icon-previous"></a>
                 <img id="main_photo_lightbox" src="images/image-product-1.jpg" alt="main sneaker image">
                 <img class="photo_small" id="photo-1" src="images/image-product-1-thumbnail.jpg" alt="small sneakers">
                 <img class="photo_small" id="photo-2" src="images/image-product-2-thumbnail.jpg" alt="image small sneakers">
-                <img class="photo_small" src="images/image-product-3-thumbnail.jpg" alt="images small sneakers">
+                <img class="photo_small" id="photo-3" src="images/image-product-3-thumbnail.jpg" alt="images small sneakers">
                 <img class="photo_small" id="photo-4" src="images/image-product-4-thumbnail.jpg"
                     alt="images small sneakers">
             </section>
@@ -63,40 +64,43 @@
             <a href="#About">About</a>
             <a href="#Contact">Contact</a>
         </nav>
-        <a id="cart" href="#"><img src="images/icon-cart.svg" alt="shopping cart icon"></a>
+        <a id="cart" href="#"><img src="images/icon-cart.svg" alt="shopping cart icon"><span id="cart_items_show">0</span></a>
         <img id="avatar" src="images/image-avatar.png" alt="avatar image">
     </header>
     <main>
         <section class="photo">
-            <a class="photo_view" id="photo_previous" href="#"><img src="images/icon-previous.svg" alt="icon-previous"></a>
-            <a class="photo_view" id="photo_next" href="#"><img src="images/icon-next.svg" alt="icon-previous"></a>
-            <img id="main_photo" src="images/image-product-1.jpg" alt="main sneaker image">
+            <a class="photo_view" id="photo_previous" href="#"><img id="photo_previous" src="images/icon-previous.svg" alt="icon-previous"></a>
+            <a class="photo_view" id="photo_next" href="#"><img id="photo_next" src="images/icon-next.svg" alt="icon-previous"></a>
+            <img id="main_photo" class='mainPhoto' src="images/image-product-1.jpg" alt="main sneaker image">
             <img class="photo_small" id="photo-1" src="images/image-product-1-thumbnail.jpg" alt="small sneakers">
             <img class="photo_small" id="photo-2" src="images/image-product-2-thumbnail.jpg" alt="image small sneakers">
-            <img class="photo_small" src="images/image-product-3-thumbnail.jpg" alt="images small sneakers">
+            <img class="photo_small" id="photo-3" src="images/image-product-3-thumbnail.jpg" alt="images small sneakers">
             <img class="photo_small" id="photo-4" src="images/image-product-4-thumbnail.jpg"
                 alt="images small sneakers">
         </section>
-        <section class="buy">
+        <section class="buy" data-id="sneakers">
             <h3 id="sneaker">sneaker company</h3>
-            <h1 id="edition">Fall Limited edition Sneakers</h1>
+            <h1 id="edition" data-title="Fall Limited Edition Sneakers">Fall Limited Edition Sneakers</h1>
             <p id="description">These low-profile sneakers are your perfect casual wear companion. Featuring a durable
                 rubberr outer sole, they'll withstand everything the weather can offer.</p>
-            <p id="price">125.00<br></p><del id="price_deleted">250.00</del>
+            <p id="price">$125.00<br></p><del id="price_deleted">250.00</del>
 
             <div class="items_number">
                 <div class="items_number_pl-mn">
-                    <img id="minus"src="images/icon-minus.svg" alt="icon-minus">
-                    <span id="total_items">0</span>
-                    <img id="plus"src="images/icon-plus.svg" alt="icon-plus">
+                    <img id="minus" data-action="minus" src="images/icon-minus.svg" alt="icon-minus">
+                    <span id="total_items" data-counter>0</span>
+                    <img id="plus" data-action="plus" src="images/icon-plus.svg" alt="icon-plus">
                 </div>
-            <button id="button">
+                <button id="button" data-cart="add to cart">
                 <img id="cart_icon" src="images/white_cart.svg" alt="white shopping cart icon"><span id="btn-cart">Add to cart</span>
-            </button>
+                </button>
             </div>
         </section>
     </main>
     <script src="main.js"></script>
+    <script src="cart.js"></script>
+    <script src="side_menu.js"></script>
+    <script src="counter.js"></script>
 </body>
 
 </html>

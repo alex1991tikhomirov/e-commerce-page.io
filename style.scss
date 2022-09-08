@@ -8,27 +8,26 @@ body {
 
 /* shopping cart invisible starts*/
 
-.visible{
-    transform: translateY(5px);
-    transition: visibility 5s;
+.visible_cart{
+    display: block !important;
 }
 .shopping_cart {
-    transform: translateY(-500px);
-    height: 250px;
+    // transform: translateY(-500px);
+    display: none;
+    height: fit-content;
+    min-width: 320px;
+    min-height: 200px;
     position: absolute;
     z-index: 300;
     top: 65px;
-    right: 10%;
-    width: 375px;
+    right: 3%;
+    @media(min-width: 1200px){
+        right:10%;
+    }
     @media(max-width: 400px){
         right: 5%;
         width: 90%;
     }
-    
-    display: flex;
-    flex-direction: column;
-    justify-items: center;
-    justify-content: space-between;
     background-color: #fff;
     border-radius: 15px;
     box-shadow: 1px 42px 75px -23px rgba(79, 78, 78, 0.54);
@@ -51,12 +50,11 @@ body {
         padding: 20px;
         width: 100%;
         display: flex;
-        flex-direction: row;
         align-items: center;
-        justify-content: space-between;
-
+        justify-content: center;
+        min-height: 180px;
         .shopping_cart_description {
-            margin: 0 15px;
+            // margin: 0 15px;
             font-weight: 400;
             font-size: 15px;
             line-height: 159.02%;
@@ -76,10 +74,11 @@ body {
     }
 
     .Checkout {
+        grid-column: 1 / -1;
         text-align: center;
-        width: 90%;
+        width: 100%;
         margin: 0 auto;
-        margin-bottom: 20px;
+        margin-top: 10px;
         height: 56px;
         background: #F18533;
         border-radius: 9px;
@@ -130,7 +129,9 @@ body {
             grid-column: 1 / -1;
             cursor: pointer;
         }
-
+        .photo_small:hover{
+            border: 2px solid orange;
+        }
         .photo_small {
             max-width: 89px;
             border-radius: 9px;
@@ -150,11 +151,11 @@ body {
             justify-content: center;
         }
 
-        #photo_next {
+        #photo_next_lightbox {
             right: -20px;
         }
 
-        #photo_previous {
+        #photo_previous_lightbox {
             left: -20px;
         }
 
@@ -165,12 +166,14 @@ body {
     }
 }
 ////////////////// lightbox end ////////////////////////////////////
+
 .visible{
+    box-shadow: 300px 0  0 300px rgba(0, 0, 0, 0.65);
     transform: translateX(0px) !important;
 }
 ////   side menu invisble making translate from the left to the right
 .side_menu {
-    width: 60%;
+    width: 70%;
     height: 100vh + 1;
     padding: 25px;
     background-color: #fff;
@@ -179,7 +182,7 @@ body {
     top: 0;
     z-index: 500;
     transform: translateX(-1114px);
-    transition: ease-in 0.3s;
+    transition: 0.5s ease-in-out;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -253,12 +256,13 @@ header {
         }
     }
 
-    #cart::after {
+    #cart_items_show {
         display: none;
-        content: '';
+        width: 15px;
+        height: 15px;
         font-size: 8px;
-        padding: 2px 8px;
-        border-radius: 10px;
+        padding: 3px;
+        border-radius: 6.5px;
         color: #fff;
         background-color: $m-orange;
         position: absolute;
@@ -352,7 +356,13 @@ main {
             grid-column: 1 / -1;
             cursor: pointer;
         }
-
+        .photo_small:hover{
+            opacity: 0.8;
+        }
+        .photo_small:active{
+            border: 3px solid orange;
+            opacity: 0.5;
+        }
         .photo_small {
             @media (max-width: $scr-wd) {
                 display: none;
@@ -366,6 +376,7 @@ main {
 
     .buy {
         @media(max-width: 400px) {
+            margin:  8px;
             width: 100%;
             height: 100%;
             position: absolute;
