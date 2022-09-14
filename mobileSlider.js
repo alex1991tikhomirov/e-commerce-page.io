@@ -1,19 +1,18 @@
-document.addEventListener('click', e=>{
-    let count = 0;
-    if(e.target.id === 'photo_next' || e.target.id === 'photo_previous'){
-        const photoCont = e.target.closest('.photo');
-        let img = photoCont.querySelector('#main_photo');
-        
-        const photoArr = [
+let counter = 0;
+const imgArr = [
             './images/image-product-1.jpg',
             './images/image-product-2.jpg',
             './images/image-product-3.jpg',
-            './images/image-product-4.jpg',
+            './images/image-product-4.jpg'
         ];
-        let count = photoArr.length;
-        console.log(count);
-        count--;
-        
-    }
-   
-})
+
+document.getElementById('photo_next').addEventListener('click', ()=>{
+let img = document.getElementById('main_photo_mobile');  
+    (counter > 2 ? counter = 0 : counter++);
+    img.src = imgArr[counter];
+});
+document.getElementById('photo_previous').addEventListener('click', ()=>{
+    let img = document.getElementById('main_photo_mobile');
+        (counter > 0 ? counter -= 1 : counter += 3);
+        img.src = imgArr[counter];
+    })
